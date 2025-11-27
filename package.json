@@ -1,21 +1,32 @@
 {
-  "name": "amazon",
+  "type": "module",
+  "name": "proyecto_musica",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
-  "main": "./index.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "dev": "nodemon ./backend/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EMANUELBUSTOS/AMAZON.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EMANUELBUSTOS/AMAZON/issues"
+  },
+  "homepage": "https://github.com/EMANUELBUSTOS/AMAZON#readme",
   "dependencies": {
     "colors": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
-    "mongoose": "^8.19.2"
+    "mongoose": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }

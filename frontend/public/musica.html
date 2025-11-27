@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | Administración Música</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #fff;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      background-color: #1a1a1a;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      border-right: 1px solid #333;
+    }
+
+    .sidebar h2 {
+      color: #1DB954;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .btn-menu {
+      background-color: #1DB954;
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      transition: .2s;
+    }
+
+    .btn-menu:hover {
+      background-color: #1ed760;
+      color: #fff;
+    }
+
+    /* CONTENIDO */
+    .content {
+      margin-left: 270px;
+      padding: 40px;
+    }
+
+    .card {
+      background-color: #181818;
+      border: none;
+      color: #fff;
+      border-radius: 12px;
+    }
+
+    input {
+      background-color: #222 !important;
+      color: #fff !important;
+      border: 1px solid #444 !important;
+    }
+
+    input:focus {
+      border-color: #1DB954 !important;
+      box-shadow: 0 0 5px #1DB954 !important;
+    }
+
+    table {
+      color: #fff !important;
+    }
+
+    .table-dark {
+      background-color: #111 !important;
+    }
+
+    .btn-edit {
+      background-color: #1DB954;
+      border: none;
+    }
+
+    .btn-delete {
+      background-color: #d9534f;
+      border: none;
+    }
+
+    .btn-edit:hover { background-color: #1ed760; }
+    .btn-delete:hover { background-color: #ff6b6b; }
+  </style>
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>🎵 Música Admin</h2>
+
+    <a href="index.html" class="btn-menu">🏠 Ir al Inicio</a>
+    <a href="Musica.html" class="btn-menu">🎧 Ir a Música</a>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="content">
+
+    <h1 class="mb-4">Panel de Administración</h1>
+
+    <!-- FORMULARIO -->
+    <div class="card p-4 mb-4 shadow">
+      <h4>Agregar / Editar Canción</h4>
+
+      <form id="formMusic">
+        <input type="hidden" id="musicID">
+
+        <div class="mb-3">
+          <label class="form-label">Título</label>
+          <input type="text" id="titulo" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Artista</label>
+          <input type="text" id="artista" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Género</label>
+          <input type="text" id="genero" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">URL Portada</label>
+          <input type="text" id="portada" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">URL Audio (MP3)</label>
+          <input type="text" id="audio" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">Guardar Canción</button>
+      </form>
+    </div>
+
+    <!-- TABLA -->
+    <div class="card p-3 shadow">
+      <h4 class="mb-3">Lista de Canciones</h4>
+
+      <table class="table table-bordered table-dark table-striped">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Artista</th>
+            <th>Género</th>
+            <th>Audio</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaMusica"></tbody>
+      </table>
+    </div>
+
+  </div>
+
+<script src="js/musicaCRUD.js"></script>
+
+</body>
+</html>
